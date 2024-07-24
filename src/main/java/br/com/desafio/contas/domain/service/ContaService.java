@@ -42,8 +42,12 @@ public class ContaService {
 		return contaRep.findByDataAndDescricao(conta.getDataVencimento(), conta.getDescricao(), pageable);
 	}
 	
-	public void saveOrUpdateConta(Conta conta) {
-		contaRep.save(conta);
+	public Conta salvarConta(Conta conta) {
+		return contaRep.save(conta);
+	}
+	
+	public Conta atualizarConta(Conta conta) {
+		return contaRep.save(conta);
 	}
 	
 	public void atualizarSituacao(Conta conta) {
@@ -86,7 +90,7 @@ public class ContaService {
             csvParser.close();
             
             for(Conta conta: contas) {
-            	contaRep.save(conta);
+            	salvarConta(conta);
             }
         }
     }

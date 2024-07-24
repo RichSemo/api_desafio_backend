@@ -85,7 +85,7 @@ public class ContaControllerTest {
     @Test
     public void testCadastrarConta() throws JsonProcessingException, Exception {
     	
-    	doNothing().when(contaService).saveOrUpdateConta(any(Conta.class));
+    	doNothing().when(contaService).salvarConta(any(Conta.class));
 
     	mockMvc.perform(post("/api/desafio/contas/cadastrar")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -124,7 +124,7 @@ public class ContaControllerTest {
     @Test
     public void testAtualizarConta() throws Exception {
 
-    	doNothing().when(contaService).saveOrUpdateConta(any(Conta.class));
+    	doNothing().when(contaService).atualizarConta(any(Conta.class));
 
         mockMvc.perform(post("/api/desafio/contas/atualizar")
                 .contentType(MediaType.APPLICATION_JSON)

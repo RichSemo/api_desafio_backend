@@ -24,9 +24,9 @@ import br.com.desafio.contas.domain.service.ContaService;
 
 @RestController
 @RequestMapping("/api/desafio/contas")
-public class ContaController {
-
-	@Autowired
+public class ContaController {	
+    
+    @Autowired
 	private ContaService contaService;
 	
 	@PostMapping("/uploadCSV")
@@ -41,8 +41,7 @@ public class ContaController {
 	
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Conta> cadastrarConta(@RequestBody Conta conta) {
-		contaService.saveOrUpdateConta(conta);
-		return new ResponseEntity<>(conta, HttpStatus.CREATED);
+		return new ResponseEntity<>(contaService.salvarConta(conta), HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/consultar/{id}")
@@ -59,8 +58,7 @@ public class ContaController {
 	
 	@PostMapping("/atualizar")
 	public ResponseEntity<Conta> atualizarConta(@RequestBody Conta conta) {
-		contaService.saveOrUpdateConta(conta);
-		return new ResponseEntity<>(conta, HttpStatus.OK);		
+		return new ResponseEntity<>(contaService.atualizarConta(conta), HttpStatus.OK);		
 	}
 	
 	@PostMapping("/alterarSituacao")

@@ -21,9 +21,7 @@ public interface ContaRepository extends JpaRepository<Conta,Long>{
 	@Transactional
 	@Query("SELECT c FROM Conta c WHERE c.id = :id")
 	Optional<Conta> findById(@Param("id") long id);
-	
-	<S extends Conta> S save(Conta conta);
-	
+		
 	void delete(Conta conta);
 	
     @Transactional

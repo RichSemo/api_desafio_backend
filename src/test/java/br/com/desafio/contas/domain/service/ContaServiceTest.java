@@ -63,9 +63,16 @@ public class ContaServiceTest {
     }
     
     @Test
-    public void testSaveOrUpdateConta() {
+    public void testSalvarConta() {
         Conta conta = MockContaHelper.getConta();
-        contaService.saveOrUpdateConta(conta);
+        contaService.salvarConta(conta);
+        verify(contaRepository, times(1)).save(conta);
+    }
+    
+    @Test
+    public void testAtualizarConta() {
+        Conta conta = MockContaHelper.getConta();
+        contaService.atualizarConta(conta);
         verify(contaRepository, times(1)).save(conta);
     }
     
