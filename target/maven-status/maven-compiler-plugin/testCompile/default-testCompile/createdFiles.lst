@@ -1,0 +1,3 @@
+br\com\desafio\contas\domain\model\ContaTest.class
+br\com\desafio\contas\domain\service\ContaServiceTest.class
+br\com\desafio\contas\interfaces\controller\ContaControllerTest.class
